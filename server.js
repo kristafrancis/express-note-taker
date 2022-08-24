@@ -1,13 +1,15 @@
 //require express library
 const express = require('express');
 
-//create route to front end
+//gives each note a unique ID
+const uniqid = require('uniqid');
 
 //set up server
 const app = express();
 const PORT = process.env.PORT || 3001;
-const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
+const apiRoutes = require('./Routes/apiRoutes');
+const htmlRoutes = require('./Routes/htmlRoutes');
+
 
 // parse incoming string or array data
 app.use(express.urlencoded({ extended: true }));
@@ -15,11 +17,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
-//
-app.get('/api/notes', (req, res) => {
-    res.json(allNotes.slice(1));
-});
-
+//use apiRoutes
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
 
 
 //make server run
