@@ -8,4 +8,9 @@ router.post("/notes", (req, res) => {
     res.json(newNote);
 });
 
+router.delete('/api/notes/:id', (req, res) => {
+    deleteNote(req.params.id, allNotes);
+    res.json(true);
+});
+
 module.exports = router;

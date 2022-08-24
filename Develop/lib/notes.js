@@ -1,24 +1,16 @@
 const fs = require("fs");
 const path = require("path");
 
+
 function createNewNote(body, notesArray) {
     const newNote = body;
-    if (!Array.isArray(notesArray))
-        notesArray = [];
-    
-    if (notesArray.length === 0)
-        notesArray.push(0);
-
-    body.id = notesArray[0];
-    notesArray[0]++;
-
     notesArray.push(newNote);
     fs.writeFileSync(
-        path.join(__dirname, './db/db.json'),
-        JSON.stringify(notesArray, null, 2)
+      path.join(__dirname, '../db/db.json'),
+      JSON.stringify({notes: notesArray}, null, 2)
     );
-    return newNote;
-}
+    return Newnote;
+  }
 
 function deleteNote(id, notesArray) {
     for (let i = 0; i < notesArray.length; i++) {
@@ -36,10 +28,7 @@ function deleteNote(id, notesArray) {
     }
 }
 
-app.delete('/api/notes/:id', (req, res) => {
-    deleteNote(req.params.id, allNotes);
-    res.json(true);
-});
+
 
 module.exports = {
     createNewNote,
