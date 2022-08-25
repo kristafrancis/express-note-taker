@@ -4,7 +4,7 @@ const { createNewNote, getNotes, deleteNote } = require('../../lib/notes');
 const allNotes = require('../../db/db.json');
 
 router.get('/notes', (req, res) => {
-    const allNotes = getNotes()
+    //const allNotes = getNotes()
     return res.json(allNotes)
 });
 
