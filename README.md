@@ -26,4 +26,4 @@ Email: kristafrancis08@yahoo.com
 
 https://dashboard.heroku.com/apps/krista-express-note-taker
 
-image.png
+file:///var/folders/lc/zdy49ccn4pd4zr8t_w36w66c0000gn/T/TemporaryItems/NSIRD_screencaptureui_yCWFsX/Screen%20Shot%202022-08-25%20at%206.57.41%20PM.png
